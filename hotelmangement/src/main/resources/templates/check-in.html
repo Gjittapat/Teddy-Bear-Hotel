@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hotel Management System</title>
+        <link rel="stylesheet" href="css/sidebar_style.css">
+        <link rel="stylesheet" href="css/pop-up-bar.css">
+        <link rel="stylesheet" href="css/check-in-table.css">
+        <link rel="stylesheet" href="css/log-out.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold" rel="stylesheet" type="text/css"/>
+        <style>
+
+            @import url(//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold);
+
+            .topbar{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .sidebar{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .content{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .center{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .content2{
+            font-family: "Copperplate Gothic Bold"
+            }
+            input,button{
+            font-family: "Copperplate Gothic Bold"
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="title">Teddy Bear Hotel</div>
+            <img th:src="@{images/logo.jpg}" alt="Logo" style="width: 210px; height: 210px; position: fixed; top:-47px; left: 20px">
+        </div>
+        <div class="sidebar">
+            <a href="/booking">Booking</a>
+            <a class="active" href="/check-in">Check in</a>
+            <a href="/">Room</a>
+            <a href="/guest">Guest</a>
+            <div class="log-out" style="position:absolute; left: 50px; bottom: 100px; position: fixed">
+                <a href="login.html"><i class="fa fa-sign-out">Sign Out</i></a>
+            </div>
+        </div>
+
+        <div class = "content" style="color: #000000">
+            <form class="form" action = "#" th:action="@{/check-in}" th:object ="${inputToFunction}" method = "post">
+                <label for="ID">Guest ID</label>
+                <input type="text" th:field = "*{id}" id="ID" placeholder="Enter Guest ID" name="ID"/>
+                <button type="reset">Clear</button>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="center">
+            <input type="checkbox" id="click">
+            <label for="click" class="click-me">Check out</label>
+            <div class="content2">
+                <label for="click" id="temp">x</label>
+                <form action = "#" th:action="@{/check-out}" th:object ="${inputToFunction}" method = "post">
+                    <label for="check-out">Guest ID</label>
+                    <input type="text" th:field = "*{id}" id="check-out"/>
+                    <button type="submit">Check Out</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

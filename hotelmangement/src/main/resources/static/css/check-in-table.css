@@ -1,0 +1,50 @@
+body{
+    color: #fff;
+    font:600 16px 'Open Sans',sans-serif;
+}
+
+/* Style the form - display items horizontally */
+.form {
+    margin-left: 320px;
+    align-items: center;
+    display: block;
+}
+
+/* Add some margins for each label */
+.form label {
+    position: relative;
+    bottom: 7px;
+    padding-top: 20px;
+    padding-left: 100px;
+    margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.form input {
+    color: #000000;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    margin-left: 100px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 300px;
+}
+
+/* Style the submit button */
+.form button {
+    width: 100px;
+    padding: 10px 20px;
+    margin-left: 50px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: #fff;
+    position: relative;
+    left: 70px;
+}
+
+.form button:hover {
+    background-color: #ffed59;
+    color: black;
+}
+

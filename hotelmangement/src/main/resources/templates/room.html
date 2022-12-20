@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+    <head>
+        <title>Hotel Management System</title>
+        <link rel="stylesheet" href="css/sidebar_style.css">
+        <link rel="stylesheet" href="css/log-out.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold" rel="stylesheet" type="text/css"/>
+        <style>
+            table {
+                    font-family: "Copperplate Gothic Bold";
+                    border-collapse: collapse;
+                    width: 82%;
+                    }
+
+            td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+            tr:nth-child(even) {
+                    background-color: #dddddd;
+                    }
+
+            @import url(//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold);
+
+            .topbar{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .sidebar{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .content{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .center{
+            font-family: "Copperplate Gothic Bold"
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="title">Teddy Bear Hotel</div>
+            <img th:src="@{images/logo.jpg}" alt="Logo" style="width: 210px; height: 210px; position: fixed; top:-47px; left: 20px">
+        </div>
+        <div class="sidebar">
+
+            <a href="/booking">Booking</a>
+            <a href="/check-in">Check in</a>
+            <a class="active" href="/">Room</a>
+            <a href="/guest">Guest</a>
+            <div class="log-out" style="position:absolute; left: 50px; bottom: 100px; position: fixed">
+                <a href="login.html"><i class="fa fa-sign-out">Sign Out</i></a>
+            </div>
+        </div>
+        <div class = "content">
+            <h3>List Room</h3>
+            <table style="position:fixed">
+                <tr>
+                    <th>Room No</th>
+                    <th>Availability</th>
+
+                    <th>Type</th>
+                    <th>Bed</th>
+                    <th>Rate</th>
+                </tr>
+                <tr th:each="room: ${rooms}">
+                    <td th:text="${room.id}" />
+                    <td th:text="${room.availability_status}" />
+
+                        <td th:each="category : ${roomCategories}" th:if="(${category.id} == ${room.id})" th:text="${category.roomType}" />
+                        <td th:each="category : ${roomCategories}" th:if="(${category.id} == ${room.id})" th:text="${category.bedType}" />
+                        <td th:each="category : ${roomCategories}" th:if="(${category.id} == ${room.id})" th:text="${category.rate}" />
+
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

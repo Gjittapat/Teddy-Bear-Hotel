@@ -1,0 +1,53 @@
+body{
+    color: #fff;
+    font:600 16px 'Open Sans',sans-serif;
+}
+
+/* Style the form - display items horizontally */
+.form {
+    margin-top: 0px;
+    margin-left: 320px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/* Add some margins for each label */
+.form label {
+    border-radius:25px;
+    margin: 5px 10px 5px 0;
+    line-height: 28px;
+}
+
+/* Style the input fields */
+.form input {
+    color: #000000;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius:25px;
+    width: 400px;
+}
+
+/* Style the submit button */
+.form button {
+    width: 100px;
+    padding: 10px 20px;
+    margin-left: 50px;
+    margin-top: 10px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    border-radius:25px;
+    color: #fff;
+    position: relative;
+    left: -20px;
+}
+
+.form button:hover {
+    background-color: #ffed59;
+    color: black;
+}
+

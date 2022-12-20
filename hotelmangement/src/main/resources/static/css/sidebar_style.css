@@ -1,0 +1,62 @@
+body{
+    font:600 16px 'Open Sans',sans-serif;
+}
+.title{
+    top: 35px;
+    left: 200px;
+    color:#fff;
+    font-size: 50px;
+    position: absolute;
+}
+.topbar{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color:#6b0917;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    height: 100px;
+    overflow: auto;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color:#9c1429;
+  top: 100px;
+  left: 0px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: #fff;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #bf1932;
+  color: #fff;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #ffed59;
+  color: black;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  top: 120px;
+  height: 1000px;
+  position: fixed;
+}
+

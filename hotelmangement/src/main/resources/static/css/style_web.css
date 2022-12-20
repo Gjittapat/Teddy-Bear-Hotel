@@ -1,0 +1,123 @@
+body{
+	color:#fff;
+        position: absolute;
+        top: 45px;
+        left: 200px;
+	font:600 50px/22px 'Open Sans',sans-serif;
+        background-color: #6b0917;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+}
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.bar-wrap{
+	width:100%;
+	margin:auto;
+        top:100px;
+        left: 0px;
+	max-width:200px;
+	min-height:700px;
+	position:fixed;
+        background-color:#9c1429;
+}
+.show-wrap{
+	width:100%;
+	margin:auto;
+        top:100px;
+        left: 210px;
+	max-width:1145px;
+	min-height:700px;
+	position:fixed;
+        background-color:#fff;
+}
+.bar-html{
+        width:100%;
+        height:100%;
+        top: 40px;
+        left: 30px;
+        position:relative;
+        height: 500px;
+        width: 180px;
+}
+
+.bar-html .Booking,
+.bar-html .Chack-in,
+.bar-html .Room,
+.bar-html .Guest,
+.bar-html .Employee,
+.bar-html .Statistics{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.bar-html .Booking-html,
+.bar-html .Chack-in-html,
+.bar-html .Room-html,
+.bar-html .Guest-html,
+.bar-html .Employee-html,
+.bar-html .Statistics-html,
+.bar-form .group .check{
+	display:none;
+}
+.bar-html .tab,
+.bar-html .group .label,
+.bar-html .group .button{
+	text-transform:uppercase;
+}
+.bar-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.bar-html .Booking:checked + .tab,
+.bar-html .Chack-in:checked + .tab,
+.bar-html .Room:checked + .tab,
+.bar-html .Guest:checked + .tab,
+.bar-html .Employee:checked + .tab,
+.bar-html .Statistics:checked + .tab{
+	color:#000000;
+	border-color:#ffed59;
+}
+.bar-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.bar-form .group{
+	margin-bottom:15px;
+}
+
+.bar-form .group .label{
+	color:#000000;
+	font-size:12px;
+}
+.bar-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.3);
+}
+.bar-form.group .check:checked + label{
+	color:#fff;
+}
+.bar-form .group .check:checked + label .icon{
+	background:#ffed59;
+}
+
+

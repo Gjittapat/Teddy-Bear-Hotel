@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hotel Management System</title>
+        <link rel="stylesheet" href="css/sidebar_style.css">
+        <link rel="stylesheet" href="css/pop-up-bar.css">
+        <link rel="stylesheet" href="css/log-out.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold" rel="stylesheet" type="text/css"/>
+        <style>
+            table {
+                    font-family: "Copperplate Gothic Bold";
+                    border-collapse: collapse;
+                    width: 82%;
+                    }
+
+            td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+            tr:nth-child(even) {
+                    background-color: #dddddd;
+                    }
+
+            @import url(//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold);
+
+            .topbar{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .sidebar{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .content{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .center{
+            font-family: "Copperplate Gothic Bold"
+            }
+            .click-me{
+            width:250px;
+            }
+            input,button{
+            font-family: "Copperplate Gothic Bold"
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="title">Teddy Bear Hotel</div>
+            <img th:src="@{images/logo.jpg}" alt="Logo" style="width: 210px; height: 210px; position: fixed; top:-47px; left: 20px">
+        </div>
+        <div class="sidebar">
+            <a class="active" href="/booking">Booking</a>
+            <a href="/check-in">Check in</a>
+            <a href="/">Room</a>
+            <a href="/guest">Guest</a>
+            <div class="log-out" style="position:absolute; left: 50px; bottom: 100px; position: fixed">
+                <a href="login.html"><i class="fa fa-sign-out">Sign Out</i></a>
+            </div>
+        </div>
+        <div class = "content" style="color: #000000">
+            <h3>Booked Guests</h3>
+            <table style="position:fixed">
+                <tr>
+                    <th>Guest ID</th>
+                    <th>Guest Name</th>
+                    <th>Status</th>
+                    <th>Phone</th>
+                    <th>Room</th>
+                </tr>
+                <tr th:each="booking: ${bookings}">
+                    <td th:text="${booking.id}" />
+                    <td th:text="${booking.guestName}" />
+                    <td th:text="${booking.guestStatus}" />
+                    <td th:text="${booking.guest_phone}" />
+                    <td th:text="${booking.room_no}" />
+                </tr>
+            </table>
+        </div>
+        <div class="center">
+            <input type="checkbox" id="click">
+            <label for="click" class="click-me">Cancel Booking</label>
+            <div class="content2">
+                <label for="click" id="temp">x</label>
+                <form action = "#" th:action="@{/booking}" th:object ="${inputToFunction}" method = "post">
+                    <label for="cancelbooking">Guest ID</label>
+                    <input type="text" th:field = "*{id}" id="cancelbooking"/>
+                    <button type ="submit">Cancel Booking</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
